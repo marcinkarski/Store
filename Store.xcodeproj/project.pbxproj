@@ -12,6 +12,8 @@
 		2E5DC9E5223272AD00811D8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E5DC9E4223272AD00811D8C /* Assets.xcassets */; };
 		2E5DC9E8223272AD00811D8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E5DC9E6223272AD00811D8C /* LaunchScreen.storyboard */; };
 		2E5DC9F0223274AC00811D8C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5DC9EF223274AC00811D8C /* TabBarController.swift */; };
+		2E5DC9F22232AC9800811D8C /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5DC9F12232AC9800811D8C /* UICollectionViewCell.swift */; };
+		2E5DCA152232B78000811D8C /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5DCA142232B78000811D8C /* SearchCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		2E5DC9E7223272AD00811D8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E5DC9E9223272AD00811D8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E5DC9EF223274AC00811D8C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		2E5DC9F12232AC9800811D8C /* UICollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
+		2E5DCA142232B78000811D8C /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +59,39 @@
 			isa = PBXGroup;
 			children = (
 				2E5DC9DD223272AB00811D8C /* AppDelegate.swift */,
-				2E5DC9DF223272AB00811D8C /* SearchViewController.swift */,
-				2E5DC9EF223274AC00811D8C /* TabBarController.swift */,
+				2E5DCA122232B76100811D8C /* Controllers */,
+				2E5DCA132232B77000811D8C /* Views */,
+				2E5DC9F32232ACA600811D8C /* Extenstions */,
 				2E5DC9E4223272AD00811D8C /* Assets.xcassets */,
 				2E5DC9E6223272AD00811D8C /* LaunchScreen.storyboard */,
 				2E5DC9E9223272AD00811D8C /* Info.plist */,
 			);
 			path = Store;
+			sourceTree = "<group>";
+		};
+		2E5DC9F32232ACA600811D8C /* Extenstions */ = {
+			isa = PBXGroup;
+			children = (
+				2E5DC9F12232AC9800811D8C /* UICollectionViewCell.swift */,
+			);
+			path = Extenstions;
+			sourceTree = "<group>";
+		};
+		2E5DCA122232B76100811D8C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2E5DC9EF223274AC00811D8C /* TabBarController.swift */,
+				2E5DC9DF223272AB00811D8C /* SearchViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2E5DCA132232B77000811D8C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2E5DCA142232B78000811D8C /* SearchCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +165,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E5DC9F0223274AC00811D8C /* TabBarController.swift in Sources */,
+				2E5DCA152232B78000811D8C /* SearchCell.swift in Sources */,
+				2E5DC9F22232AC9800811D8C /* UICollectionViewCell.swift in Sources */,
 				2E5DC9E0223272AB00811D8C /* SearchViewController.swift in Sources */,
 				2E5DC9DE223272AB00811D8C /* AppDelegate.swift in Sources */,
 			);
