@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController {
+class SearchViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -8,7 +8,6 @@ class ViewController: UIViewController {
     }
     
     private func setup() {
-        view.backgroundColor = .white
-        self.title = "Store"
+        collectionView.backgroundColor = .white
     }
 }
