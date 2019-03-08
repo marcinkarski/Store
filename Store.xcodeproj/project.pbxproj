@@ -11,6 +11,7 @@
 		2E5DC9E0223272AB00811D8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5DC9DF223272AB00811D8C /* ViewController.swift */; };
 		2E5DC9E5223272AD00811D8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E5DC9E4223272AD00811D8C /* Assets.xcassets */; };
 		2E5DC9E8223272AD00811D8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E5DC9E6223272AD00811D8C /* LaunchScreen.storyboard */; };
+		2E5DC9F0223274AC00811D8C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5DC9EF223274AC00811D8C /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		2E5DC9E4223272AD00811D8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E5DC9E7223272AD00811D8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E5DC9E9223272AD00811D8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E5DC9EF223274AC00811D8C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				2E5DC9DD223272AB00811D8C /* AppDelegate.swift */,
 				2E5DC9DF223272AB00811D8C /* ViewController.swift */,
+				2E5DC9EF223274AC00811D8C /* TabBarController.swift */,
 				2E5DC9E4223272AD00811D8C /* Assets.xcassets */,
 				2E5DC9E6223272AD00811D8C /* LaunchScreen.storyboard */,
 				2E5DC9E9223272AD00811D8C /* Info.plist */,
@@ -131,6 +134,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E5DC9F0223274AC00811D8C /* TabBarController.swift in Sources */,
 				2E5DC9E0223272AB00811D8C /* ViewController.swift in Sources */,
 				2E5DC9DE223272AB00811D8C /* AppDelegate.swift in Sources */,
 			);
