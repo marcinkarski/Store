@@ -2,7 +2,7 @@ import UIKit
 
 class SearchCell: UICollectionViewCell {
     
-    lazy var imageView: UIImageView = {
+    lazy var appIcon: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .red
         imageView.widthAnchor.constraint(equalToConstant: 60).isActive = true
@@ -12,19 +12,19 @@ class SearchCell: UICollectionViewCell {
         return imageView
     }()
     
-    lazy var nameLabel: UILabel = {
+    lazy var name: UILabel = {
         let label = UILabel()
         label.text = "Name"
         return label
     }()
     
-    lazy var categoryLabel: UILabel = {
+    lazy var category: UILabel = {
         let label = UILabel()
         label.text = "Photo & Video"
         return label
     }()
     
-    lazy var ratingLabel: UILabel = {
+    lazy var rating: UILabel = {
         let label = UILabel()
         label.text = "9M"
         return label
@@ -35,27 +35,44 @@ class SearchCell: UICollectionViewCell {
         button.setTitle("Get", for: .normal)
         button.setTitleColor(.blue, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
-        button.backgroundColor = .lightGray
-        button.widthAnchor.constraint(equalToConstant: 60).isActive = true
-        button.layer.cornerRadius = 6
+        button.backgroundColor = UIColor(white: 0.9, alpha: 1)
+        button.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 32).isActive = true
+        button.layer.cornerRadius = 16
         button.layer.masksToBounds = true
         return button
     }()
     
+    lazy var screenshot1 = makeShreenshot()
+    lazy var screenshot2 = makeShreenshot()
+    lazy var screenshot3 = makeShreenshot()
+    
+    private func makeShreenshot() -> UIImageView {
+        let imageView = UIImageView()
+        imageView.backgroundColor = .lightGray
+        return imageView
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        let labelsStackView = UIStackView(arrangedSubviews: [nameLabel, categoryLabel, ratingLabel])
+        
+        let labelsStackView = UIStackView(arrangedSubviews: [name, category, rating])
         labelsStackView.axis = .vertical
-        let stackView = UIStackView(arrangedSubviews: [imageView, labelsStackView, getButton])
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.alignment = .center
-        stackView.spacing = 12
+        
+        let infoStackView = UIStackView(arrangedSubviews: [appIcon, labelsStackView, getButton])
+        infoStackView.alignment = .center
+        infoStackView.spacing = 16
+        
+        let screenshotStackView = UIStackView(arrangedSubviews: [screenshot1, screenshot2, screenshot3])
+        screenshotStackView.spacing = 12
+        screenshotStackView.distribution = .fillEqually
+        
+        let stackView = UIStackView(arrangedSubviews: [infoStackView, screenshotStackView])
+        stackView.axis = .vertical
+        stackView.spacing = 16
+        
         addSubview(stackView)
-        NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
-            stackView.topAnchor.constraint(equalTo: topAnchor),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor)])
+        stackView.fillSuperview(padding: .init(top: 16, left: 16, bottom: 16, right: 16))
     }
     
     required init?(coder aDecoder: NSCoder) {

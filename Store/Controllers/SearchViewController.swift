@@ -5,6 +5,7 @@ class SearchViewController: UICollectionViewController, UICollectionViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        fetchSearch()
     }
     
     private func setup() {
@@ -12,21 +13,40 @@ class SearchViewController: UICollectionViewController, UICollectionViewDelegate
         collectionView.register(SearchCell.self, forCellWithReuseIdentifier: SearchCell.identifier)
     }
     
+    private var search = [Result]()
+    
+    private func fetchSearch() {
+        Service.shared.fetchData { (result, error) in
+            if let error = error {
+                print("Failed to fetch search result", error)
+                return
+            }
+            self.search = result
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+    }
+    
     init() {
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchCell.identifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchCell.identifier, for: indexPath) as! SearchCell
+        let search = self.search[indexPath.item]
+        cell.name.text = search.trackName
+        cell.category.text = search.primaryGenreName
+        cell.rating.text = "\(search.averageUserRating ?? 0)"
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return search.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 300)
+        return CGSize(width: view.frame.width, height: 320)
     }
     
     required init?(coder aDecoder: NSCoder) {

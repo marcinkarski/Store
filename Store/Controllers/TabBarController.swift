@@ -8,7 +8,7 @@ class TabBarController: UITabBarController {
         let appsNavController = makeNavController(viewController: UIViewController(), title: "Apps", image: "apps")
         let searchNavController = makeNavController(viewController: SearchViewController(), title: "Search", image: "search")
         
-        viewControllers = [todayNavController, appsNavController, searchNavController]
+        viewControllers = [searchNavController, todayNavController, appsNavController]
     }
     
     private func makeNavController(viewController: UIViewController, title: String, image: String) -> UIViewController {
