@@ -2,6 +2,23 @@ import UIKit
 
 class SearchCell: UICollectionViewCell {
     
+    var search: Result! {
+        didSet {
+            name.text = search?.trackName
+            category.text = search.primaryGenreName
+            rating.text = "Rating: \(search.averageUserRating ?? 0)"
+            let url = URL(string: search.artworkUrl100)
+            appIcon.sd_setImage(with: url)
+            screenshot1.sd_setImage(with: URL(string: search.screenshotUrls[0]))
+            if search.screenshotUrls.count > 1 {
+                screenshot2.sd_setImage(with: URL(string: search.screenshotUrls[1]))
+            }
+            if search.screenshotUrls.count > 2 {
+                screenshot3.sd_setImage(with: URL(string: search.screenshotUrls[2]))
+            }
+        }
+    }
+    
     lazy var appIcon: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .red
@@ -50,6 +67,11 @@ class SearchCell: UICollectionViewCell {
     private func makeShreenshot() -> UIImageView {
         let imageView = UIImageView()
         imageView.backgroundColor = .lightGray
+        imageView.contentMode = .scaleToFill
+        imageView.layer.cornerRadius = 6
+        imageView.layer.masksToBounds = true
+        imageView.layer.borderWidth = 1
+        imageView.layer.borderColor = UIColor(white: 0.9, alpha: 1).cgColor
         return imageView
     }
     
