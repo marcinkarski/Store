@@ -21,7 +21,6 @@ class SearchCell: UICollectionViewCell {
     
     lazy var appIcon: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .red
         imageView.widthAnchor.constraint(equalToConstant: 60).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 60).isActive = true
         imageView.layer.cornerRadius = 12
@@ -66,7 +65,6 @@ class SearchCell: UICollectionViewCell {
     
     private func makeShreenshot() -> UIImageView {
         let imageView = UIImageView()
-        imageView.backgroundColor = .lightGray
         imageView.contentMode = .scaleToFill
         imageView.layer.cornerRadius = 6
         imageView.layer.masksToBounds = true

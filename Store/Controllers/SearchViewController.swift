@@ -1,23 +1,59 @@
 import UIKit
 import SDWebImage
 
-class SearchViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class SearchViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
+    
+    lazy var label: UILabel = {
+        let label = UILabel()
+        label.text = "Type in what you are looking for above."
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 18, weight: .medium)
+        label.textColor = UIColor(white: 0.5, alpha: 1)
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    private lazy var searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        fetchSearch()
+//        fetchSearch()
+        setupSearchBar()
     }
     
     private func setup() {
         collectionView.backgroundColor = .white
         collectionView.register(SearchCell.self, forCellWithReuseIdentifier: SearchCell.identifier)
+        collectionView.addSubview(label)
+        label.fillSuperview(padding: .init(top: 50, left: 20, bottom: 0, right: 20))
+    }
+    
+    private func setupSearchBar() {
+        definesPresentationContext = true
+        navigationItem.searchController = self.searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.searchBar.delegate = self
+    }
+    
+    var timer: Timer?
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (_) in
+            Service.shared.fetchData(searchText: searchText) { (result, error) in
+                self.search = result
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            }
+        })
     }
     
     private var search = [Result]()
     
     private func fetchSearch() {
-        Service.shared.fetchData { (result, error) in
+        Service.shared.fetchData(searchText: "twitter") { (result, error) in
             if let error = error {
                 print("Failed to fetch search result", error)
                 return
@@ -40,6 +76,7 @@ class SearchViewController: UICollectionViewController, UICollectionViewDelegate
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        label.isHidden = search.count != 0
         return search.count
     }
     

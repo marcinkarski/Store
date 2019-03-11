@@ -3,8 +3,8 @@ import Foundation
 class Service {
     static let shared = Service()
     
-    func fetchData(completion: @escaping ([Result], Error?) -> ()) {
-        let urlString = "https://itunes.apple.com/search?term=instagram&entity=software"
+    func fetchData(searchText: String, completion: @escaping ([Result], Error?) -> ()) {
+        let urlString = "https://itunes.apple.com/search?term=\(searchText)&entity=software"
         guard let url = URL(string: urlString) else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
