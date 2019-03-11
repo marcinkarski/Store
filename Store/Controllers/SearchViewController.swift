@@ -1,7 +1,7 @@
 import UIKit
 import SDWebImage
 
-class SearchViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
+class SearchViewController: CollectionViewController, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
     lazy var label: UILabel = {
         let label = UILabel()
@@ -65,10 +65,6 @@ class SearchViewController: UICollectionViewController, UICollectionViewDelegate
         }
     }
     
-    init() {
-        super.init(collectionViewLayout: UICollectionViewFlowLayout())
-    }
-    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchCell.identifier, for: indexPath) as! SearchCell
         cell.search = self.search[indexPath.item]
@@ -82,9 +78,5 @@ class SearchViewController: UICollectionViewController, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: 320)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }

@@ -5,7 +5,7 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         
         let todayNavController = makeNavController(viewController: UIViewController(), title: "Today", image: "today")
-        let appsNavController = makeNavController(viewController: UIViewController(), title: "Apps", image: "apps")
+        let appsNavController = makeNavController(viewController: AppsViewController(), title: "Apps", image: "apps")
         let searchNavController = makeNavController(viewController: SearchViewController(), title: "Search", image: "search")
         
         viewControllers = [todayNavController, appsNavController, searchNavController]
