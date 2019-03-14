@@ -2,6 +2,12 @@ import UIKit
 
 class AppsHorizontalViewController: CollectionViewController, UICollectionViewDelegateFlowLayout {
     
+    var items: Apps? {
+        didSet {
+            
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -14,11 +20,15 @@ class AppsHorizontalViewController: CollectionViewController, UICollectionViewDe
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return items?.feed.results.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppRowCell.identifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppRowCell.identifier, for: indexPath) as! AppRowCell
+        let app = items?.feed.results[indexPath.item]
+        cell.nameLabel.text = app?.name
+        cell.companyLabel.text = app?.artistName
+        cell.appIcon.sd_setImage(with: URL(string: app?.artworkUrl100 ?? ""))
         return cell
     }
     

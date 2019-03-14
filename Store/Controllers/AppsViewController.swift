@@ -2,6 +2,14 @@ import UIKit
 
 class AppsViewController: CollectionViewController, UICollectionViewDelegateFlowLayout {
     
+    let activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .whiteLarge)
+        indicator.color = .gray
+        indicator.startAnimating()
+        indicator.hidesWhenStopped = true
+        return indicator
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -9,20 +17,56 @@ class AppsViewController: CollectionViewController, UICollectionViewDelegateFlow
         collectionView.register(AppsGroupCell.self, forCellWithReuseIdentifier: AppsGroupCell.identifier)
         collectionView.register(AppsHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header")
         fetchData()
+        
+        view.addSubview(activityIndicator)
+        activityIndicator.fillSuperview()
     }
     
+    var headerApps = [Header]()
+    
+    var feedSections = [Apps]()
+    
     private func fetchData() {
-        Service.shared.fetchGames { (apps, error) in
-            if let error = error {
-                print("Failed to fetch games", error)
-                return
+        
+        var section1: Apps?
+        var section2: Apps?
+        
+        let dispatchGroup = DispatchGroup()
+        
+            dispatchGroup.enter()
+            Service.shared.fetchGames { (apps, error) in
+                dispatchGroup.leave()
+                section1 = apps
             }
-            print(apps?.feed.results)
+        dispatchGroup.enter()
+        Service.shared.fetchTopGrossing { (apps, error) in
+            dispatchGroup.leave()
+            section2 = apps
+        }
+        dispatchGroup.enter()
+        Service.shared.fetchAppsHeader { (apps, error) in
+            dispatchGroup.leave()
+//            apps?.forEach({print($0.name)})
+            self.headerApps = apps ?? []
+        }
+        
+        dispatchGroup.notify(queue: .main) {
+            
+            self.activityIndicator.stopAnimating()
+            if let section = section1 {
+                self.feedSections.append(section)
+            }
+            if let section = section2 {
+                self.feedSections.append(section)
+            }
+            self.collectionView.reloadData()
         }
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Header", for: indexPath)
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Header", for: indexPath) as! AppsHeader
+        header.headerController.items = self.headerApps
+        header.headerController.collectionView.reloadData()
         return header
     }
     
@@ -31,11 +75,15 @@ class AppsViewController: CollectionViewController, UICollectionViewDelegateFlow
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return feedSections.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppsGroupCell.identifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppsGroupCell.identifier, for: indexPath) as! AppsGroupCell
+        let apps = feedSections[indexPath.item]
+        cell.sectionName.text = apps.feed.title
+        cell.horizontalController.items = apps
+        cell.horizontalController.collectionView.reloadData()
         return cell
     }
     

@@ -4,8 +4,8 @@ class AppRowCell: UICollectionViewCell {
 
     lazy var appIcon = UIImageView(cornerRadius: 12)
     lazy var getButton = UIButton(title: "GET")
-    lazy var nameLabel = UILabel(text: "App Name", font: .systemFont(ofSize: 18, weight: .medium))
-    lazy var companyLabel = UILabel(text: "Company Name", font: .systemFont(ofSize: 14, weight: .medium))
+    lazy var nameLabel = UILabel(text: "App Name", font: .systemFont(ofSize: 14, weight: .medium))
+    lazy var companyLabel = UILabel(text: "Company Name", font: .systemFont(ofSize: 12, weight: .medium))
     
     override init(frame: CGRect) {
         super.init(frame: frame)

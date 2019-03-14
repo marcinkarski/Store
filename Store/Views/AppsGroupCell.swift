@@ -2,9 +2,9 @@ import UIKit
 
 class AppsGroupCell: UICollectionViewCell {
     
-    private lazy var sectionName = UILabel(text: "Section", font: .systemFont(ofSize: 22, weight: .medium))
+    lazy var sectionName = UILabel(text: "Section", font: .systemFont(ofSize: 22, weight: .medium))
     
-    private let horizontalController = AppsHorizontalViewController()
+    let horizontalController = AppsHorizontalViewController()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
