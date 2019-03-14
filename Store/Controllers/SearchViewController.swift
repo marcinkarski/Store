@@ -41,8 +41,8 @@ class SearchViewController: CollectionViewController, UICollectionViewDelegateFl
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (_) in
-            Service.shared.fetchData(searchText: searchText) { (result, error) in
-                self.search = result
+            Service.shared.fetchSearch(searchText: searchText) { (result, error) in
+                self.search = result?.results ?? []
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }
@@ -53,12 +53,12 @@ class SearchViewController: CollectionViewController, UICollectionViewDelegateFl
     private var search = [Result]()
     
     private func fetchSearch() {
-        Service.shared.fetchData(searchText: "twitter") { (result, error) in
+        Service.shared.fetchSearch(searchText: "twitter") { (result, error) in
             if let error = error {
                 print("Failed to fetch search result", error)
                 return
             }
-            self.search = result
+            self.search = result?.results ?? []
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
