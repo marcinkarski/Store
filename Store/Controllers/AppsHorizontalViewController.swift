@@ -1,6 +1,6 @@
 import UIKit
 
-class AppsHorizontalViewController: CollectionViewController, UICollectionViewDelegateFlowLayout {
+class AppsHorizontalViewController: SnapController, UICollectionViewDelegateFlowLayout {
     
     var items: Apps? {
         didSet {
@@ -13,10 +13,7 @@ class AppsHorizontalViewController: CollectionViewController, UICollectionViewDe
         
         collectionView.backgroundColor = .white
         collectionView.register(AppRowCell.self, forCellWithReuseIdentifier: AppRowCell.identifier)
-        
-        if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.scrollDirection = .horizontal
-        }
+        collectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 16)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -35,10 +32,6 @@ class AppsHorizontalViewController: CollectionViewController, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = (view.frame.height - 24 - 20) / 3
         return CGSize(width: view.frame.width - 48, height: height)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 12, left: 16, bottom: 12, right: 16)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

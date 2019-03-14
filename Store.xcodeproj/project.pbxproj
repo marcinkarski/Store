@@ -30,6 +30,7 @@
 		2EFD3FA82238569C00BFB7EC /* AppsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFD3FA72238569C00BFB7EC /* AppsHeaderCell.swift */; };
 		2EFD3FAA22395FE600BFB7EC /* Apps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFD3FA922395FE600BFB7EC /* Apps.swift */; };
 		2EFD3FAC223A8C8F00BFB7EC /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFD3FAB223A8C8F00BFB7EC /* Header.swift */; };
+		2EFD3FAE223AB0CB00BFB7EC /* SnapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFD3FAD223AB0CB00BFB7EC /* SnapController.swift */; };
 		D408C36F40FE231DAC6374FD /* Pods_Store.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C843EAE3EA57F8D13EDC7F /* Pods_Store.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		2EFD3FA72238569C00BFB7EC /* AppsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderCell.swift; sourceTree = "<group>"; };
 		2EFD3FA922395FE600BFB7EC /* Apps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apps.swift; sourceTree = "<group>"; };
 		2EFD3FAB223A8C8F00BFB7EC /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		2EFD3FAD223AB0CB00BFB7EC /* SnapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapController.swift; sourceTree = "<group>"; };
 		38C843EAE3EA57F8D13EDC7F /* Pods_Store.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Store.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B500088C25005E80BAF513 /* Pods-Store.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Store.release.xcconfig"; path = "Pods/Target Support Files/Pods-Store/Pods-Store.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +133,7 @@
 				2E5DCA292237086600811D8C /* AppsHorizontalViewController.swift */,
 				2E5DC9DF223272AB00811D8C /* SearchViewController.swift */,
 				2E5DCA232236FE0700811D8C /* CollectionViewController.swift */,
+				2EFD3FAD223AB0CB00BFB7EC /* SnapController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				2E5DC9E0223272AB00811D8C /* SearchViewController.swift in Sources */,
 				2E5DCA222236FCA400811D8C /* AppsViewController.swift in Sources */,
 				2EFD3FA42237EC6E00BFB7EC /* AppsHeader.swift in Sources */,
+				2EFD3FAE223AB0CB00BFB7EC /* SnapController.swift in Sources */,
 				2E5DCA172232C88200811D8C /* UIView.swift in Sources */,
 				2EFD3FA82238569C00BFB7EC /* AppsHeaderCell.swift in Sources */,
 				2E5DC9DE223272AB00811D8C /* AppDelegate.swift in Sources */,
