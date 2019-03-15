@@ -22,6 +22,7 @@
 		2E5DCA262237007C00811D8C /* AppsGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5DCA252237007C00811D8C /* AppsGroupCell.swift */; };
 		2E5DCA282237053D00811D8C /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5DCA272237053D00811D8C /* UILabel.swift */; };
 		2E5DCA2A2237086600811D8C /* AppsHorizontalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5DCA292237086600811D8C /* AppsHorizontalViewController.swift */; };
+		2EF264CF223BE8E80036354D /* AppsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF264CE223BE8E80036354D /* AppsDetailViewController.swift */; };
 		2EFD3F9E2237D5D500BFB7EC /* AppRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFD3F9D2237D5D500BFB7EC /* AppRowCell.swift */; };
 		2EFD3FA02237DB9D00BFB7EC /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFD3F9F2237DB9D00BFB7EC /* UIButton.swift */; };
 		2EFD3FA22237DBC000BFB7EC /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFD3FA12237DBC000BFB7EC /* UIImageView.swift */; };
@@ -53,6 +54,7 @@
 		2E5DCA252237007C00811D8C /* AppsGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupCell.swift; sourceTree = "<group>"; };
 		2E5DCA272237053D00811D8C /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		2E5DCA292237086600811D8C /* AppsHorizontalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHorizontalViewController.swift; sourceTree = "<group>"; };
+		2EF264CE223BE8E80036354D /* AppsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsDetailViewController.swift; sourceTree = "<group>"; };
 		2EFD3F9D2237D5D500BFB7EC /* AppRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRowCell.swift; sourceTree = "<group>"; };
 		2EFD3F9F2237DB9D00BFB7EC /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		2EFD3FA12237DBC000BFB7EC /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			children = (
 				2E5DC9EF223274AC00811D8C /* TabBarController.swift */,
 				2E5DCA212236FCA400811D8C /* AppsViewController.swift */,
+				2EF264CE223BE8E80036354D /* AppsDetailViewController.swift */,
 				2EFD3FA52237FB2400BFB7EC /* AppsHeaderController.swift */,
 				2E5DCA292237086600811D8C /* AppsHorizontalViewController.swift */,
 				2E5DC9DF223272AB00811D8C /* SearchViewController.swift */,
@@ -306,6 +309,7 @@
 			files = (
 				2E5DC9F0223274AC00811D8C /* TabBarController.swift in Sources */,
 				2E5DCA202235B0BB00811D8C /* Service.swift in Sources */,
+				2EF264CF223BE8E80036354D /* AppsDetailViewController.swift in Sources */,
 				2E5DCA262237007C00811D8C /* AppsGroupCell.swift in Sources */,
 				2E5DCA152232B78000811D8C /* SearchCell.swift in Sources */,
 				2EFD3FA62237FB2400BFB7EC /* AppsHeaderController.swift in Sources */,

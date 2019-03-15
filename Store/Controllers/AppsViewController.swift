@@ -84,6 +84,11 @@ class AppsViewController: CollectionViewController, UICollectionViewDelegateFlow
         cell.sectionName.text = apps.feed.title
         cell.horizontalController.items = apps
         cell.horizontalController.collectionView.reloadData()
+        cell.horizontalController.didSelectItem = { [weak self] feedResult in
+            let detailController = AppsDetailViewController()
+            detailController.navigationItem.title = feedResult.name
+            self?.navigationController?.pushViewController(detailController, animated: true)
+        }
         return cell
     }
     

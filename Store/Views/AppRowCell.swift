@@ -13,6 +13,8 @@ class AppRowCell: UICollectionViewCell {
         appIcon.backgroundColor = .lightGray
         appIcon.constrainWidth(constant: 60)
         appIcon.constrainHeight(constant: 60)
+        appIcon.layer.borderWidth = 1
+        appIcon.layer.borderColor = UIColor(white: 0.9, alpha: 1).cgColor
         getButton.backgroundColor = UIColor(white: 0.9, alpha: 1)
         getButton.constrainWidth(constant: 80)
         getButton.constrainHeight(constant: 32)

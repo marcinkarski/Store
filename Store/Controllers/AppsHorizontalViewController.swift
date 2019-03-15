@@ -2,11 +2,9 @@ import UIKit
 
 class AppsHorizontalViewController: SnapController, UICollectionViewDelegateFlowLayout {
     
-    var items: Apps? {
-        didSet {
-            
-        }
-    }
+    var items: Apps?
+    
+    var didSelectItem: ((FeedResults) -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,5 +34,11 @@ class AppsHorizontalViewController: SnapController, UICollectionViewDelegateFlow
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let item = items?.feed.results[indexPath.item] {
+            didSelectItem?(item)            
+        }
     }
 }
