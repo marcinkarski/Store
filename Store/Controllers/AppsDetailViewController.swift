@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AppsDetailViewController: CollectionViewController {
+class AppsDetailViewController: CollectionViewController, UICollectionViewDelegateFlowLayout {
     
     var appId: String! {
         didSet {
@@ -23,5 +23,22 @@ class AppsDetailViewController: CollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = .white
+        
+        collectionView.register(DetailCell.self, forCellWithReuseIdentifier: DetailCell.identifier)
+        
+        navigationItem.largeTitleDisplayMode = .never
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailCell.identifier, for: indexPath) as! DetailCell
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return .init(width: view.frame.width, height: 300)
     }
 }
