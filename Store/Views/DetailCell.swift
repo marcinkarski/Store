@@ -10,6 +10,15 @@ import UIKit
 
 class DetailCell: UICollectionViewCell {
     
+    var app: Result! {
+        didSet {
+            name.text = app?.trackName
+            releaseNotes.text = app?.releaseNotes
+            appIcon.sd_setImage(with: URL(string: app?.artworkUrl100 ?? ""))
+            priceButton.setTitle(app?.formattedPrice, for: .normal)
+        }
+    }
+    
     lazy var appIcon = UIImageView(cornerRadius: 16)
     
     lazy var name = UILabel(text: "App Name", font: .boldSystemFont(ofSize: 22), numberOfLines: 2)
