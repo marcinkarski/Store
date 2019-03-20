@@ -24,6 +24,8 @@
 		2E5DCA2A2237086600811D8C /* AppsHorizontalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5DCA292237086600811D8C /* AppsHorizontalViewController.swift */; };
 		2EF264CF223BE8E80036354D /* AppsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF264CE223BE8E80036354D /* AppsDetailViewController.swift */; };
 		2EF264D1224042350036354D /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF264D0224042350036354D /* DetailCell.swift */; };
+		2EF264D32242E4D20036354D /* PreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF264D22242E4D20036354D /* PreviewCell.swift */; };
+		2EF264D52242E7DC0036354D /* PrevController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF264D42242E7DC0036354D /* PrevController.swift */; };
 		2EFD3F9E2237D5D500BFB7EC /* AppRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFD3F9D2237D5D500BFB7EC /* AppRowCell.swift */; };
 		2EFD3FA02237DB9D00BFB7EC /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFD3F9F2237DB9D00BFB7EC /* UIButton.swift */; };
 		2EFD3FA22237DBC000BFB7EC /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFD3FA12237DBC000BFB7EC /* UIImageView.swift */; };
@@ -57,6 +59,8 @@
 		2E5DCA292237086600811D8C /* AppsHorizontalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHorizontalViewController.swift; sourceTree = "<group>"; };
 		2EF264CE223BE8E80036354D /* AppsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsDetailViewController.swift; sourceTree = "<group>"; };
 		2EF264D0224042350036354D /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
+		2EF264D22242E4D20036354D /* PreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCell.swift; sourceTree = "<group>"; };
+		2EF264D42242E7DC0036354D /* PrevController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrevController.swift; sourceTree = "<group>"; };
 		2EFD3F9D2237D5D500BFB7EC /* AppRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRowCell.swift; sourceTree = "<group>"; };
 		2EFD3F9F2237DB9D00BFB7EC /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		2EFD3FA12237DBC000BFB7EC /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 				2E5DC9EF223274AC00811D8C /* TabBarController.swift */,
 				2E5DCA212236FCA400811D8C /* AppsViewController.swift */,
 				2EF264CE223BE8E80036354D /* AppsDetailViewController.swift */,
+				2EF264D42242E7DC0036354D /* PrevController.swift */,
 				2EFD3FA52237FB2400BFB7EC /* AppsHeaderController.swift */,
 				2E5DCA292237086600811D8C /* AppsHorizontalViewController.swift */,
 				2E5DC9DF223272AB00811D8C /* SearchViewController.swift */,
@@ -147,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				2E5DCA142232B78000811D8C /* SearchCell.swift */,
+				2EF264D22242E4D20036354D /* PreviewCell.swift */,
 				2EF264D0224042350036354D /* DetailCell.swift */,
 				2EFD3FA32237EC6E00BFB7EC /* AppsHeader.swift */,
 				2EFD3FA72238569C00BFB7EC /* AppsHeaderCell.swift */,
@@ -326,7 +332,9 @@
 				2E5DC9E0223272AB00811D8C /* SearchViewController.swift in Sources */,
 				2EF264D1224042350036354D /* DetailCell.swift in Sources */,
 				2E5DCA222236FCA400811D8C /* AppsViewController.swift in Sources */,
+				2EF264D32242E4D20036354D /* PreviewCell.swift in Sources */,
 				2EFD3FA42237EC6E00BFB7EC /* AppsHeader.swift in Sources */,
+				2EF264D52242E7DC0036354D /* PrevController.swift in Sources */,
 				2EFD3FAE223AB0CB00BFB7EC /* SnapController.swift in Sources */,
 				2E5DCA172232C88200811D8C /* UIView.swift in Sources */,
 				2EFD3FA82238569C00BFB7EC /* AppsHeaderCell.swift in Sources */,

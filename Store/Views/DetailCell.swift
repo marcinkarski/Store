@@ -1,11 +1,3 @@
-//
-//  DetailCell.swift
-//  Store
-//
-//  Created by Marcin Karski on 18/03/2019.
-//  Copyright © 2019 Marcin Karski. All rights reserved.
-//
-
 import UIKit
 
 class DetailCell: UICollectionViewCell {
