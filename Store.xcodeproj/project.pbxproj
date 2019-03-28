@@ -22,10 +22,13 @@
 		2E5DCA262237007C00811D8C /* AppsGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5DCA252237007C00811D8C /* AppsGroupCell.swift */; };
 		2E5DCA282237053D00811D8C /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5DCA272237053D00811D8C /* UILabel.swift */; };
 		2E5DCA2A2237086600811D8C /* AppsHorizontalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5DCA292237086600811D8C /* AppsHorizontalViewController.swift */; };
+		2EE6B55C224D6DCD003F276B /* RevCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE6B55B224D6DCD003F276B /* RevCell.swift */; };
 		2EF264CF223BE8E80036354D /* AppsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF264CE223BE8E80036354D /* AppsDetailViewController.swift */; };
 		2EF264D1224042350036354D /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF264D0224042350036354D /* DetailCell.swift */; };
 		2EF264D32242E4D20036354D /* PreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF264D22242E4D20036354D /* PreviewCell.swift */; };
 		2EF264D52242E7DC0036354D /* PrevController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF264D42242E7DC0036354D /* PrevController.swift */; };
+		2EF264D722457BBF0036354D /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF264D622457BBF0036354D /* ReviewCell.swift */; };
+		2EF264D922457E6B0036354D /* ReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF264D822457E6B0036354D /* ReviewController.swift */; };
 		2EFD3F9E2237D5D500BFB7EC /* AppRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFD3F9D2237D5D500BFB7EC /* AppRowCell.swift */; };
 		2EFD3FA02237DB9D00BFB7EC /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFD3F9F2237DB9D00BFB7EC /* UIButton.swift */; };
 		2EFD3FA22237DBC000BFB7EC /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFD3FA12237DBC000BFB7EC /* UIImageView.swift */; };
@@ -57,10 +60,13 @@
 		2E5DCA252237007C00811D8C /* AppsGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupCell.swift; sourceTree = "<group>"; };
 		2E5DCA272237053D00811D8C /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		2E5DCA292237086600811D8C /* AppsHorizontalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHorizontalViewController.swift; sourceTree = "<group>"; };
+		2EE6B55B224D6DCD003F276B /* RevCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevCell.swift; sourceTree = "<group>"; };
 		2EF264CE223BE8E80036354D /* AppsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsDetailViewController.swift; sourceTree = "<group>"; };
 		2EF264D0224042350036354D /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		2EF264D22242E4D20036354D /* PreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCell.swift; sourceTree = "<group>"; };
 		2EF264D42242E7DC0036354D /* PrevController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrevController.swift; sourceTree = "<group>"; };
+		2EF264D622457BBF0036354D /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
+		2EF264D822457E6B0036354D /* ReviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewController.swift; sourceTree = "<group>"; };
 		2EFD3F9D2237D5D500BFB7EC /* AppRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRowCell.swift; sourceTree = "<group>"; };
 		2EFD3F9F2237DB9D00BFB7EC /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		2EFD3FA12237DBC000BFB7EC /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
@@ -136,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				2E5DC9EF223274AC00811D8C /* TabBarController.swift */,
+				2EF264D822457E6B0036354D /* ReviewController.swift */,
 				2E5DCA212236FCA400811D8C /* AppsViewController.swift */,
 				2EF264CE223BE8E80036354D /* AppsDetailViewController.swift */,
 				2EF264D42242E7DC0036354D /* PrevController.swift */,
@@ -153,6 +160,8 @@
 			children = (
 				2E5DCA142232B78000811D8C /* SearchCell.swift */,
 				2EF264D22242E4D20036354D /* PreviewCell.swift */,
+				2EF264D622457BBF0036354D /* ReviewCell.swift */,
+				2EE6B55B224D6DCD003F276B /* RevCell.swift */,
 				2EF264D0224042350036354D /* DetailCell.swift */,
 				2EFD3FA32237EC6E00BFB7EC /* AppsHeader.swift */,
 				2EFD3FA72238569C00BFB7EC /* AppsHeaderCell.swift */,
@@ -320,6 +329,7 @@
 				2E5DCA202235B0BB00811D8C /* Service.swift in Sources */,
 				2EF264CF223BE8E80036354D /* AppsDetailViewController.swift in Sources */,
 				2E5DCA262237007C00811D8C /* AppsGroupCell.swift in Sources */,
+				2EF264D722457BBF0036354D /* ReviewCell.swift in Sources */,
 				2E5DCA152232B78000811D8C /* SearchCell.swift in Sources */,
 				2EFD3FA62237FB2400BFB7EC /* AppsHeaderController.swift in Sources */,
 				2E5DC9F22232AC9800811D8C /* UICollectionViewCell.swift in Sources */,
@@ -328,8 +338,10 @@
 				2EFD3F9E2237D5D500BFB7EC /* AppRowCell.swift in Sources */,
 				2EFD3FA22237DBC000BFB7EC /* UIImageView.swift in Sources */,
 				2EFD3FAC223A8C8F00BFB7EC /* Header.swift in Sources */,
+				2EE6B55C224D6DCD003F276B /* RevCell.swift in Sources */,
 				2E5DCA242236FE0700811D8C /* CollectionViewController.swift in Sources */,
 				2E5DC9E0223272AB00811D8C /* SearchViewController.swift in Sources */,
+				2EF264D922457E6B0036354D /* ReviewController.swift in Sources */,
 				2EF264D1224042350036354D /* DetailCell.swift in Sources */,
 				2E5DCA222236FCA400811D8C /* AppsViewController.swift in Sources */,
 				2EF264D32242E4D20036354D /* PreviewCell.swift in Sources */,
